@@ -1225,9 +1225,9 @@ def bot(op):
 #-----------------------------------------------
 #VIEWSEEN TARO DISINI
 #-----------------------------------------------
-            elif "Nk " in msg.text:
+            elif "Kiss " in msg.text:
                   if msg.from_ in admin:
-                       nk0 = msg.text.replace("Nk ","")
+                       nk0 = msg.text.replace("Kiss ","")
                        nk1 = nk0.lstrip()
                        nk2 = nk1.replace("@","")
                        nk3 = nk2.rstrip()
@@ -1345,15 +1345,16 @@ def bot(op):
                         kc.sendText(msg.to,"Not found.")
                     else:
                         for target in targets:
-                            try:
-                                klist=[ki,kk,kc]
-                                kicker=random.choice(klist)
-                                kicker.kickoutFromGroup(msg.to,[target])
-                                print (msg.to,[g.mid])
-                            except:
-                                ki.sendText(msg,to,"Group cleanse")
-                                kk.sendText(msg,to,"Group cleanse")
-                                kc.sendText(msg,to,"Group cleanse")
+                            if not target in Bots:
+                                try:
+                                    klist=[ki,kk,kc]
+                                    kicker=random.choice(klist)
+                                    kicker.kickoutFromGroup(msg.to,[target])
+                                    print (msg.to,[g.mid])
+                                except:
+                                    ki.sendText(msg,to,"Group cleanse")
+                                    kk.sendText(msg,to,"Group cleanse")
+                                    kc.sendText(msg,to,"Group cleanse")
             elif "Nk " in msg.text:
                   if msg.from_ in admin:
                        nk0 = msg.text.replace("Nk ","")
